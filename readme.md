@@ -158,34 +158,36 @@ By the end of these activities, you will:
 
 #### Arithmetic Operators
 
-- Addition (+)
-- Subtraction (-)
-- Multiplication (\*)
-- Division (/)
-- Modulus (%) - Used to get the remainder
+- Addition `+`
+- Subtraction `-`
+- Multiplication `*`
+- Division `/`
+- Modulus `%` - Used to get the remainder
 
 #### Assignment Operators
 
-- Addition assignment (+=)
-- Subtraction assignment (-=)
-- Multiplication assignment (\*=)
-- Division assignment (/=)
-- Modulo assignment (%=)
+- Addition assignment `+=`
+- Subtraction assignment `-=`
+- Multiplication assignment `*=`
+- Division assignment `/=`
+- Modulo assignment `%=`
 
 #### Comparison Operators
 
-- Greater than (>)
-- Less than (<)
-- Greater than or equal to (>=)
-- Less than or equal to (<=)
-- Equality (==)
-- Strict equality (===)
+- Greater than `>`
+- Less than `<`
+- Greater than or equal to `>=`
+- Less than or equal to `<=`
+- Equality `==`
+- Unequality `!=`
+- Strict equality `===`
+- Strict unequality `!==`
 
 ### 4. Logical Operators
 
-- AND (&&)
-- OR (||)
-- NOT (!)
+- AND `&&`
+- OR `||`
+- NOT `!`
 
 ### 5. Ternary Operator
 
