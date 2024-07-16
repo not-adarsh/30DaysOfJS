@@ -651,3 +651,230 @@ By the end of these activities, students will:
 - Utilize switch cases for control flow based on specific values.
 - Apply the ternary operator for concise condition checking.
 - Combine multiple conditions to solve more complex problems.
+
+## Day 4 - 16/07/2024
+
+### Loops
+
+- For Loop
+
+  - Used for iterating a specific number of times
+
+  ```js
+  for (initialization; condition; updation) {
+    // code
+  }
+  ```
+
+- While Loop
+
+  - Executes as long as the condition is true
+
+  ```js
+  while (condition) {
+    // code
+  }
+  ```
+
+- Do...While Loop
+
+  - Always executes at least once before checking the condition
+
+  ```js
+  do {
+    // code
+  } while (condition);
+  ```
+
+- Nested Loops
+
+  - Used for multi-dimensional iterations
+
+  ```js
+  loops{
+    // code
+    loops{
+      // code
+    }
+    // code
+  }
+  ```
+
+- Loop Control Statements
+
+  - `continue`: Skips the rest of the current iteration
+  - `break`: Exits the loop entirely
+
+### Tasks:
+
+#### For Loop
+
+- Task 1: Write a program to print numbers from 1 to 10 using a for loop ✅
+
+```js
+for (let number = 1; i <= 10; i++) {
+  console.log(number);
+}
+```
+
+- Task 2: Write a program to print the multiplication table of 5 using a for loop ✅
+
+```js
+let number = 5;
+for (let multiply = 1; multiply <= 10; multiply++) {
+  console.log(`${number} x ${multiply} = ${number * multiply}`);
+}
+```
+
+#### While Loop
+
+- Task 3: Write a program to calculate the sum of numbers from 1 to 10 using a while loop ✅
+
+```js
+let number = 1;
+let answer = 0;
+while (number <= 10) {
+  answer += number++;
+}
+console.log(answer);
+```
+
+- Task 4: Write a program to print numbers from 10 to 1 using a while loop ✅
+
+```js
+let number = 10;
+while (number >= 1) {
+  console.log(number--);
+}
+```
+
+#### Do...While Loop
+
+- Task 5: Write a program to print numbers from 1 to 5 using a do...while loop ✅
+
+```js
+let number = 1;
+do {
+  console.log(number++);
+} while (number <= 5);
+```
+
+- Task 6: Write a program to calculate the factorial of a number using a do...while loop ✅
+
+```js
+let answer = 1;
+let number = 5;
+do {
+  answer *= number--;
+} while (number >= 1);
+console.log(answer);
+```
+
+#### Nested Loops
+
+- Task 7: Write a program to print a pattern using nested for loops:
+  (ignore color) ✅
+  ```bash
+  *
+  * *
+  * * *
+  * * * *
+  * * * * *
+  * * * * * *
+  ```
+  ```js
+  for (let i = 1; i <= 6; i++) {
+    let string = "";
+    for (let j = 1; j <= i; j++) {
+      string += "* ";
+    }
+    console.log(string);
+  }
+  ```
+
+#### Loop Control Statements
+
+- Task 8: Write a program to print numbers from 1 to 10, but skip the number 5 using the continue statement ✅
+
+```js
+for (let i = 1; i <= 10; i++) {
+  if (i == 5) continue;
+  console.log(i);
+}
+```
+
+- Task 9: Write a program to print numbers from 1 to 10, but stop the loop when the number is 7 using the break statement ✅
+
+```js
+for (let i = 1; i <= 10; i++) {
+  if (i == 7) break;
+  console.log(i);
+}
+```
+
+### Feature Request:
+
+- Number Printing Script: Write a script that prints numbers from 1 to 10 using a for loop and a while loop ✅
+
+```js
+for (let number = 1; i <= 10; i++) {
+  console.log(number);
+}
+let number = 1;
+while (number <= 10) {
+  console.log(number++);
+}
+```
+
+- Multiplication Table Script: Create a script that prints the multiplication table of 5 using a for loop ✅
+
+```js
+let number = 5;
+for (let multiply = 1; multiply <= 10; multiply++) {
+  console.log(`${number} x ${multiply} = ${number * multiply}`);
+}
+```
+
+- Pattern Printing Script: Write a script that prints a pattern of stars using nested loops ✅
+
+```js
+for (let i = 1; i <= 6; i++) {
+  let string = "";
+  for (let j = 1; j <= i; j++) {
+    string += "* ";
+  }
+  console.log(string);
+}
+```
+
+- Sum Calculation Script: Write a script that calculates the sum of numbers from 1 to 10 using a while loop ✅
+
+```js
+let number = 1;
+let answer = 0;
+while (number <= 10) {
+  answer += number++;
+}
+console.log(answer);
+```
+
+- Factorial Calculation Script: Create a script that calculates the factorial of a number using a do...while loop ✅
+
+```js
+let answer = 1;
+let number = 5;
+do {
+  answer *= number--;
+} while (number >= 1);
+console.log(answer);
+```
+
+### Achievement:
+
+By the end of these activities, students will:
+
+- Understand and use for loops to iterate over a sequence of numbers.
+- Utilize while loops for iteration based on a condition.
+- Apply do...while loops to ensure the loop body is executed at least once.
+- Implement nested loops to solve more complex problems.
+- Use loop control statements (break and continue) to control the flow of loops.
