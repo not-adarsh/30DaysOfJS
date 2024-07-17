@@ -878,3 +878,160 @@ By the end of these activities, students will:
 - Apply do...while loops to ensure the loop body is executed at least once.
 - Implement nested loops to solve more complex problems.
 - Use loop control statements (break and continue) to control the flow of loops.
+
+## Day 5 - 17/07/2024
+
+### Functions
+
+- **Function declaration**: Define reusable code blocks (e.g., `function isEven(){}`)
+
+- **Function expression**: Assign functions to variables (e.g., `const max = function(){}`)
+
+- **Arrow functions**: Concise syntax for short functions (e.g., `const sum = () => {}`)
+
+- **Parameters**: Input values for functions (e.g., `function square(num){}`)
+
+- **Default parameters**: Fallback values if argument is omitted (e.g., `(name, age = 1) => {}`)
+
+- **Return statement**: Send back function results (e.g., `return num * num;`)
+
+- **Higher-order functions**: Functions that operate on other functions
+
+### Tasks:
+
+#### Function Declaration
+
+- Task 1: Write a function to check if a number is even or odd and log the result to the console ✅
+
+```js
+function isEven(num) {
+  console.log(num % 2 === 0 ? "Even" : "Odd");
+}
+```
+
+- Task 2: Write a function to calculate the square of a number and return the result ✅
+
+```js
+function square(num) {
+  return num * num;
+}
+```
+
+#### Function Expression
+
+- Task 3: Write a function expression to find the maximum of two numbers and log the result to the console ✅
+
+```js
+function max(numberOne, numberTwo) {
+  return numberOne > numberTwo
+    ? numberOne
+    : numberOne != numberTwo
+    ? numberTwo
+    : "Both are Equal";
+}
+```
+
+- Task 4: Write a function expression to concatenate two strings and return the result ✅
+
+```js
+function concatenate(stringOne, stringTwo) {
+  return stringOne + stringTwo;
+}
+```
+
+#### Arrow Functions
+
+- Task 5: Write an arrow function to calculate the sum of two numbers and return the result ✅
+
+```js
+const sum = (numberOne, numberTwo) => numberOne + numberTwo;
+```
+
+- Task 6: Write an arrow function to check if a string contains a specific character and return a boolean value ✅
+
+```js
+const find = (character, string) => string.indexOf(character) != -1;
+```
+
+#### Function Parameters and Default Values
+
+- Task 7: Write a function that takes two parameters and returns their product. Provide a default value for the second parameter ✅
+
+```js
+const myFunction = (numberOne, numberTwo = 1) => numberOne * numberTwo;
+```
+
+- Task 8: Write a function that takes a person's name and age and returns a greeting message. Provide a default value for the age ✅
+
+```js
+const greetings = (name, age = 1) => `Hello ${name}, you are ${age} years old`;
+```
+
+#### Higher-Order Functions
+
+- Task 9: Write a higher-order function that takes a function and a number, and calls the function that many times ✅
+
+```js
+const repeatFunction = (callback, times) => {
+  for (let i = 0; i < times; i++) {
+    callback();
+  }
+};
+```
+
+- Task 10: Write a higher-order function that takes two functions and a value, applies the first function to the value, and then applies the second function to the result ✅
+
+```js
+const composition = (functionOne, functionTwo, initialValue) =>
+  functionTwo(functionOne(initialValue));
+```
+
+### Feature Request:
+
+- Even or Odd Function Script: Write a script that includes a function to check if a number is even or odd and logs the result ✅
+
+```js
+function isEven(num) {
+  console.log(num % 2 === 0 ? "Even" : "Odd");
+}
+```
+
+- Square Calculation Function Script: Create a script that includes a function to calculate the square of a number and returns the result ✅
+
+```js
+function square(num) {
+  return num * num;
+}
+```
+
+- Concatenation Function Script: Write a script that includes a function expression to concatenate two strings and returns the result ✅
+
+```js
+function concatenate(stringOne, stringTwo) {
+  return stringOne + stringTwo;
+}
+```
+
+- Sum Calculation Arrow Function Script: Create a script that includes an arrow function to calculate the sum of two numbers and returns the result ✅
+
+```js
+const sum = (numberOne, numberTwo) => numberOne + numberTwo;
+```
+
+- Higher-Order Function Script: Write a script that includes a higher-order function to apply a given function multiple times ✅
+
+```js
+function concatenate(stringOne, stringTwo) {
+  return stringOne + stringTwo;
+}
+```
+
+### Achievement:
+
+By the end of these activities, students will:
+
+- Understand and define functions using function declarations, expressions, and arrow functions.
+- Use function parameters and default values effectively.
+- Create and utilize higher-order functions.
+- Apply functions to solve common problems and perform calculations.
+- Enhance code reusability and organization using functions.
