@@ -1036,7 +1036,7 @@ By the end of these activities, students will:
 - Apply functions to solve common problems and perform calculations.
 - Enhance code reusability and organization using functions.
 
-## Day 6
+## Day 6 - 18/07/2024
 
 ### Arrays
 
