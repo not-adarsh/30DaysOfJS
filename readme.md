@@ -1259,3 +1259,299 @@ By the end of these activities, students will:
 - Transform and aggregate array data using map, filter, and reduce.
 - Iterate over arrays using loops and iteration methods.
 - Understand and work with multi-dimensional arrays.
+
+## Day 7 - 19/07/2024
+
+### Objects
+
+- Creation and Access
+  Objects are created using curly braces. Properties can be accessed using dot notation or bracket notation.
+
+```javascript
+const object = {
+  property1: value1,
+  property2: value2,
+};
+console.log(object.property1); // Dot notation
+console.log(object["property2"]);
+```
+
+- Methods are functions stored as object properties. They can be defined using regular function syntax or arrow functions.
+
+```javascript
+const object = {
+  method1: function () {
+    /_ function body _/;
+  },
+  method2: () => {
+    /_ arrow function body _/;
+  },
+};
+```
+
+- Nested Objects :
+  Objects can contain other objects or arrays of objects, allowing for complex data structures.
+
+```js
+const outerObject = {
+  property: value,
+  innerObject: {
+    innerProperty: value,
+  },
+  arrayOfObjects: [{ prop: value }, { prop: value }],
+};
+```
+
+- The `this` Keyword : `this` refers to the object the method is called on. It behaves differently in regular functions versus arrow functions.
+
+```js
+const object = {
+  regularMethod: function () {
+    return this.property;
+  },
+};
+```
+
+- Object Iteration : Objects can be iterated over using `for...in` loops or Object methods like keys() and values().
+
+```js
+// for...in loop
+for (let prop in object) {
+  console.log(`${prop}: ${object[prop]}`);
+}
+
+// Object.keys() and Object.values()
+console.log(Object.keys(object));
+console.log(Object.values(object));
+```
+
+### Tasks:
+
+#### Object Creation and Access
+
+- Task 1: Create an object representing a book with properties like title, author, and year, and log the object to the console ✅
+
+```js
+const book = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+};
+console.log(book);
+```
+
+- Task 2: Access and log the title and author properties of the book object ✅
+
+```js
+const book = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+};
+console.log(book.title);
+console.log(book.author);
+```
+
+#### Object Methods
+
+- Task 3: Add a method to the book object that returns a string with the book's title and author, and log the result of calling this method ✅
+
+```js
+const book = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+  getDetails: () => `${book.title}\n~${book.author}`,
+};
+console.log(book.getDetails());
+```
+
+- Task 4: Add a method to the book object that takes a parameter (year) and updates the book's year property, then log the updated object ✅
+
+```js
+const book = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+  setYear: function (newYear) {
+    this.year = newYear;
+    console.log(book);
+  },
+};
+book.setYear(2002);
+```
+
+#### Nested Objects
+
+- Task 5: Create a nested object representing a library with properties like name and books (an array of book objects), and log the library object to the console ✅
+
+```js
+let library = {
+  name: "Central City Library",
+  book: [
+    {
+      title: "Harry Potter",
+      author: "J. K. Rowling",
+      year: 2005,
+    },
+    {
+      title: "Feel Good Productivity",
+      author: "Ali Abdaal",
+      year: 2023,
+    },
+    {
+      title: "2 States",
+      author: "Chetan Bhagat",
+      year: 2012,
+    },
+  ],
+};
+console.log(library);
+```
+
+- Task 6: Access and log the name of the library and the titles of all the books in the library ✅
+
+```js
+let library = {
+  name: "Central City Library",
+  book: [
+    {
+      title: "Harry Potter",
+      author: "J. K. Rowling",
+      year: 2005,
+    },
+    {
+      title: "Feel Good Productivity",
+      author: "Ali Abdaal",
+      year: 2023,
+    },
+    {
+      title: "2 States",
+      author: "Chetan Bhagat",
+      year: 2012,
+    },
+  ],
+};
+library.book.forEach(function (book) {
+  console.log(book.title);
+});
+```
+
+#### The this Keyword
+
+- Task 7: Add a method to the book object that uses the this keyword to return a string with the book's title and year, and log the result of calling this method ✅
+
+```js
+const book = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+  getDetails: function () {
+    return `${this.title}\n~${this.author}`;
+  },
+};
+console.log(book.getDetails());
+```
+
+#### Object Iteration
+
+- Task 8: Use a for...in loop to iterate over the properties of the book object and log each property and its value ✅
+
+```js
+const book = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+  getDetails: function () {
+    return `${this.title}\n~${this.author}`;
+  },
+};
+for (let properties in book) {
+  console.log(`${properties} : ${book[properties]}`);
+}
+```
+
+- Task 9: Use Object.keys and Object.values methods to log all the keys and values of the book object ✅
+
+```js
+const book = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+  getDetails: function () {
+    return `${this.title}\n~${this.author}`;
+  },
+};
+console.log(Object.keys(book));
+console.log(Object.values(book));
+```
+
+### Feature Request:
+
+- Book Object Script: Write a script that creates a book object, adds methods to it, and logs its properties and method results ✅
+
+```js
+const book = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+  getDetails: () => `${book.title}\n~${book.author}`,
+  setYear: function (newYear) {
+    this.year = newYear;
+    console.log(book);
+  },
+};
+console.log(book.getDetails());
+book.setYear(2002);
+```
+
+- Library Object Script: Create a script that defines a library object containing an array of book objects and logs the library's details ✅
+
+```js
+let library = {
+  name: "Central City Library",
+  book: [
+    {
+      title: "Harry Potter",
+      author: "J. K. Rowling",
+      year: 2005,
+    },
+    {
+      title: "Feel Good Productivity",
+      author: "Ali Abdaal",
+      year: 2023,
+    },
+    {
+      title: "2 States",
+      author: "Chetan Bhagat",
+      year: 2012,
+    },
+  ],
+};
+console.log(library);
+```
+
+- Object Iteration Script: Write a script that demonstrates iterating over an object's properties using for...in loop and Object.keys/Object.values ✅
+
+```js
+const book = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+  getDetails: function () {
+    return `${this.title}\n~${this.author}`;
+  },
+};
+for (let properties in book) {
+  console.log(`${properties} : ${book[properties]}`);
+}
+```
+
+### Achievement:
+
+By the end of these activities, students will:
+
+- Create and manipulate objects with properties and methods.
+- Understand and use the this keyword in object methods.
+- Work with nested objects and arrays of objects.
+- Iterate over an object's properties using loops and built-in methods.
