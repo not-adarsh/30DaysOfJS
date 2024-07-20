@@ -1555,3 +1555,272 @@ By the end of these activities, students will:
 - Understand and use the this keyword in object methods.
 - Work with nested objects and arrays of objects.
 - Iterate over an object's properties using loops and built-in methods.
+
+## Day 8 - 20/07/2024
+
+### ES6+ Features
+
+- Template Literals
+
+  - String interpolation with variables
+
+  ```js
+  `Hello, ${name}`;
+  ```
+
+  - Multi-line strings
+
+  ```js
+  `
+  This is a 
+  multi-line string
+  `;
+  ```
+
+- Destructuring
+
+  - Array destructuring
+
+  ```js
+  const [first, second] = [4, 5];
+  ```
+
+  - Object destructuring Example:
+
+  ```js
+  const book = {
+    title: "Harry Potter",
+    author: "J. K. Rowling",
+    year: 2005,
+  };
+  const { title, author } = book;
+  ```
+
+- Spread and Rest Operators
+
+  - Spread: Combining arrays
+
+  ```js
+  const newArray = [...array1, ...array2];
+  ```
+
+  - Rest: Handling multiple function arguments
+
+  ```js
+  function sum(...numbers) {}
+  ```
+
+- Default Parameters
+
+  - Setting default values for function parameters
+
+  ```js
+  function greet(name = "Guest") {}
+  ```
+
+- Enhanced Object Literals
+  - Shorthand property names
+  - Method definitions
+  - Computed property names
+  ```js
+  const obj = {
+    prop,
+    method() {},
+    [expression]: value,
+  };
+  ```
+
+### Tasks/Activities:
+
+#### Template Literals
+
+- Task 1: Use template literals to create a string that includes variables for a person's name and age, and log the string to the console ✅
+
+```js
+const name = "Alice";
+const age = 30;
+
+console.log(`Hello, my name is ${name} and I am ${age} years old.`);
+```
+
+- Task 2: Create a multi-line string using template literals and log it to the console ✅
+
+```js
+const poem = `
+Twinkle twinkle little start
+How I wonder what you are?
+Up above the world so high 
+Like a diamond in the sky
+`;
+
+console.log(poem);
+```
+
+#### Destructuring
+
+- Task 3: Use array destructuring to extract the first and second elements from an array of numbers and log them to the console ✅
+
+```js
+const [first, second] = [12, 23];
+console.log(`first element : ${first}, second element : ${second}`);
+```
+
+- Task 4: Use object destructuring to extract the title and author from a book object and log them to the console ✅
+
+```js
+const { title, author } = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+};
+console.log(`${title}`);
+console.log(`~ ${author}`);
+```
+
+#### Spread and Rest Operators
+
+- Task 5: Use the spread operator to create a new array that includes all elements of an existing array plus additional elements, and log the new array to the console ✅
+
+```js
+const arrayOne = [1, 2, 3, 4, 5, 6];
+const arrayTwo = [7, 8, 9, 10, 11, 12];
+const mergedArray = [...arrayOne, ...arrayTwo];
+console.log(mergedArray);
+```
+
+- Task 6: Use the rest operator in a function to accept an arbitrary number of arguments, sum them, and return the result ✅
+
+```js
+const sum = (...args) => {
+  let sumOfElement = args.reduce((sum, element) => sum + element, 0);
+  return sumOfElement;
+};
+console.log(sum(2, 3, 4, 5));
+```
+
+#### Default Parameters
+
+- Task 7: Write a function that takes two parameters and returns their product, with the second parameter having a default value of 1. Log the result of calling this function with and without the second parameter ✅
+
+```js
+const product = (numberOne, numberTwo = 1) => numberOne * numberTwo;
+console.log(product(45));
+```
+
+#### Enhanced Object Literals
+
+- Task 8: Use enhanced object literals to create an object with methods and properties, and log the object to the console ✅
+
+```js
+const name = "Ady";
+const age = 18;
+
+const person = {
+  name,
+  age,
+  greet() {
+    return `Hello, I'm ${this.name}!`;
+  },
+  birthday() {
+    this.age++;
+    return `Happy birthday! I'm now ${this.age} years old.`;
+  },
+};
+
+console.log(person);
+console.log(person.greet());
+console.log(person.birthday());
+```
+
+- Task 9: Create an object with computed property names based on variables and log the object to the console ✅
+
+```js
+const key1 = "name";
+const key2 = "age";
+const key3 = "occupation";
+
+const value1 = "Alice";
+const value2 = 28;
+const value3 = "Software Developer";
+
+const person = {
+  [key1]: value1,
+  [key2]: value2,
+  [key3]: value3,
+};
+
+console.log(person);
+```
+
+### Feature Request:
+
+- Template Literals Script: Write a script that demonstrates the use of template literals to create and log strings with embedded variables and multi-line strings ✅
+
+```js
+const name = "Alice";
+const age = 30;
+
+console.log(`Hello, my name is ${name} and I am ${age} years old.`);
+
+const poem = `
+Twinkle twinkle little start
+How I wonder what you are?
+Up above the world so high 
+Like a diamond in the sky
+`;
+
+console.log(poem);
+```
+
+- Destructuring Script: Create a script that uses array and object destructuring to extract values and log them ✅
+- Spread and Rest Operators Script: Write a script that demonstrates the use of the spread operator to combine arrays and the rest operator to handle multiple function arguments ✅
+
+```js
+const [first, second] = [12, 23];
+console.log(`first element : ${first}, second element : ${second}`);
+
+const { title, author } = {
+  title: "Harry Potter",
+  author: "J. K. Rowling",
+  year: 2005,
+};
+console.log(`${title}`);
+console.log(`~ ${author}`);
+```
+
+- Default Parameters Script: Create a script that defines a function with default parameters and logs the results of calling it with different arguments ✅
+
+```js
+const product = (numberOne, numberTwo = 1) => numberOne * numberTwo;
+console.log(product(45));
+```
+
+- Enhanced Object Literals Script: Write a script that uses enhanced object literals to create and log an object with methods and computed property names ✅
+
+```js
+const key1 = "name";
+const key2 = "age";
+const key3 = "occupation";
+
+const value1 = "Alice";
+const value2 = 28;
+const value3 = "Software Developer";
+
+const person = {
+  [key1]: value1,
+  [key2]: value2,
+  [key3]: value3,
+};
+
+console.log(person);
+```
+
+### Achievement:
+
+By the end of these activities, students will:
+
+- Understand and use template literals for string interpolation and multi-line strings.
+- Apply destructuring to extract values from arrays and objects.
+- Utilize spread and rest operators for array manipulation and function arguments.
+- Define functions with default parameters.
+- Create objects using enhanced object literals, including methods and computed property names.
