@@ -1824,3 +1824,309 @@ By the end of these activities, students will:
 - Utilize spread and rest operators for array manipulation and function arguments.
 - Define functions with default parameters.
 - Create objects using enhanced object literals, including methods and computed property names.
+
+## Day 9 - 21/07/2024
+
+### DOM Manipulation
+
+- Selecting Elements
+
+| Method                                     | Description                                             | Return Type         |
+| ------------------------------------------ | ------------------------------------------------------- | ------------------- |
+| `document.getElementById('id')`            | Selects a single element by its ID                      | Single Element      |
+| `document.getElementsByClassName('class')` | Selects all elements with a specific class              | Live HTMLCollection |
+| `document.getElementsByTagName('tag')`     | Selects all elements of a specific tag                  | Live HTMLCollection |
+| `document.querySelector('selector')`       | Selects the first element that matches the CSS selector | Single Element      |
+| `document.querySelectorAll('selector')`    | Selects all elements that match the CSS selector        | Static NodeList     |
+
+```js
+const header = document.getElementById("main-header");
+const paragraphs = document.getElementsByClassName("content");
+const divs = document.getElementsByTagName("div");
+const firstButton = document.querySelector("button");
+const allLinks = document.querySelectorAll("a");
+```
+
+- Modifying Content
+
+| Property              | Description                                     |
+| --------------------- | ----------------------------------------------- |
+| `element.textContent` | Gets or sets the text content of an element     |
+| `element.innerHTML`   | Gets or sets the HTML content inside an element |
+
+```js
+document.getElementById("title").textContent = "New Title";
+document.querySelector(".container").innerHTML = "<p>New paragraph</p>";
+```
+
+- Modifying Attributes
+
+| Method                                  | Description                             |
+| --------------------------------------- | --------------------------------------- |
+| `element.getAttribute('attr')`          | Gets the value of a specified attribute |
+| `element.setAttribute('attr', 'value')` | Sets the value of a specified attribute |
+| `element.removeAttribute('attr')`       | Removes a specified attribute           |
+
+```js
+const link = document.querySelector("a");
+const currentHref = link.getAttribute("href");
+link.setAttribute("href", "https://example.com");
+link.removeAttribute("target");
+```
+
+- Modifying Styles
+
+| Property/Method                     | Description                     |
+| ----------------------------------- | ------------------------------- |
+| `element.style.property`            | Sets a specific CSS property    |
+| `element.classList.add('class')`    | Adds a class to an element      |
+| `element.classList.remove('class')` | Removes a class from an element |
+| `element.classList.toggle('class')` | Toggles a class on an element   |
+
+```js
+const div = document.querySelector("div");
+div.style.backgroundColor = "blue";
+div.classList.add("highlight");
+div.classList.remove("hidden");
+div.classList.toggle("active");
+```
+
+- Creating and Appending Elements
+
+| Method                                        | Description                            |
+| --------------------------------------------- | -------------------------------------- |
+| `document.createElement('tag')`               | Creates a new element node             |
+| `document.createTextNode('text')`             | Creates a new text node                |
+| `parent.appendChild(child)`                   | Appends a child node to a parent       |
+| `parent.insertBefore(newNode, referenceNode)` | Inserts a node before a reference node |
+
+```js
+const newDiv = document.createElement("div");
+const textNode = document.createTextNode("Hello, World!");
+newDiv.appendChild(textNode);
+document.body.appendChild(newDiv);
+const list = document.querySelector("ul");
+const newItem = document.createElement("li");
+list.insertBefore(newItem, list.firstChild);
+```
+
+- Remove Elements
+
+| Method                      | Description                        |
+| --------------------------- | ---------------------------------- |
+| `element.remove()`          | Removes the element from the DOM   |
+| `parent.removeChild(child)` | Removes a child node from a parent |
+
+```js
+const oldParagraph = document.querySelector(".old-content");
+oldParagraph.remove();
+
+const parent = document.querySelector("#parent");
+const childToRemove = document.querySelector("#child");
+parent.removeChild(childToRemove);
+```
+
+- Event Handling
+
+| Method                                          | Description                              |
+| ----------------------------------------------- | ---------------------------------------- |
+| `element.addEventListener('event', handler)`    | Attaches an event handler to an element  |
+| `element.removeEventListener('event', handler)` | Removes an event handler from an element |
+
+```js
+function handleClick(event) {
+  console.log("Button clicked!", event);
+}
+
+const button = document.querySelector("button");
+button.addEventListener("click", handleClick);
+
+button.removeEventListener("click", handleClick);
+```
+
+- Traversing the DOM
+
+| Property                  | Description                       |
+| ------------------------- | --------------------------------- |
+| `element.parentNode`      | Returns the parent node           |
+| `element.childNodes`      | Returns a NodeList of child nodes |
+| `element.firstChild`      | Returns the first child node      |
+| `element.lastChild`       | Returns the last child node       |
+| `element.nextSibling`     | Returns the next sibling node     |
+| `element.previousSibling` | Returns the previous sibling node |
+
+```js
+const parent = element.parentNode;
+const children = element.childNodes;
+const firstChild = element.firstChild;
+const lastChild = element.lastChild;
+const nextSibling = element.nextSibling;
+const prevSibling = element.previousSibling;
+```
+
+#### Tasks:
+
+#### Selecting and Manipulating Elements
+
+- Task 1: Select an HTML element by its ID and change its text content ✅
+
+```js
+const paragraph = document.querySelector("#paragraph");
+pragraph.innerHTML = "Hello World";
+```
+
+- Task 2: Select an HTML element by its class and change its background color ✅
+
+```js
+const redParagraph = document.querySelectorAll(".redParagraph");
+redParagraph.forEach((element) => {
+  element.style.backgroundColor = "red";
+});
+```
+
+#### Creating and Appending Elements
+
+- Task 3: Create a new div element with some text content and append it to the body ✅
+
+```js
+const body = document.querySelector("body");
+const newDiv = document.createElement("div");
+const textNode = document.createTextNode("Hello 🔥");
+newDiv.appendChild(textNode);
+body.appendChild(newDiv);
+```
+
+- Task 4: Create a new li element and add it to an existing ul list ✅
+
+```js
+const list = document.querySelector("ul");
+const listElement = document.createElement("li");
+listElement.appendChild(document.createTextNode("Dakota"));
+list.appendChild(listElement);
+```
+
+#### Removing Elements
+
+- Task 5: Select an HTML element and remove it from the DOM ✅
+
+```js
+const toBeRemoved = document.querySelector("#toBeRemoved");
+setTimeout(() => {
+  toBeRemoved.remove();
+}, 5000);
+```
+
+- Task 6: Remove the last child of a specific HTML element ✅
+
+```js
+const sameList = document.querySelector("ul");
+const sameListElement = document.createElement("li");
+sameListElement.appendChild(
+  document.createTextNode("Elephant to be removed after 3 seconds")
+);
+sameList.appendChild(sameListElement);
+setTimeout(() => {
+  sameList.removeChild(sameList.lastChild);
+}, 3000);
+```
+
+#### Modifying Attributes and Classes
+
+- Task 7: Select an HTML element and change one of its attributes (e.g., src of an img tag) ✅
+
+```js
+const image = document.querySelector("#image");
+image.setAttribute("src", "path/to/new-image");
+```
+
+- Task 8: Add and remove a CSS class to/from an HTML element.
+
+```js
+const element = document.querySelector("#changeBackground");
+element.classList.add("redParagraph");
+element.classList.remove("greenParagraph");
+let newParagraph = document.querySelectorAll(".redParagraph");
+newParagraph.forEach((element) => {
+  element.style.backgroundColor = "red";
+});
+```
+
+#### Event Handling
+
+- Task 9: Add a click event listener to a button that changes the text content of a paragraph ✅
+
+```js
+const button = document.querySelector("#myButton");
+const newParagraphAgain = document.getElementById("myParagraph");
+button.addEventListener("click", function () {
+  newParagraphAgain.textContent = "The button was clicked!";
+});
+```
+
+- Task 10: Add a mouseover event listener to an element that changes its border color ✅
+
+```js
+const elementAgain = document.getElementById("myElement");
+elementAgain.addEventListener("mouseover", function () {
+  elementAgain.style.borderColor = "red";
+});
+```
+
+### Feature Request:
+
+- Text Content Manipulation Script: Write a script that selects an HTML element by its ID and changes its text content ✅
+
+```js
+const paragraph = document.querySelector("#paragraph");
+pragraph.innerHTML = "Hello World";
+```
+
+- Element Creation Script: Create a script that demonstrates creating a new div element and appending it to the body ✅
+
+```js
+const body = document.querySelector("body");
+const newDiv = document.createElement("div");
+const textNode = document.createTextNode("Hello 🔥");
+newDiv.appendChild(textNode);
+body.appendChild(newDiv);
+```
+
+- Element Removal Script: Write a script that selects an HTML element and removes it from the DOM ✅
+
+```js
+const toBeRemoved = document.querySelector("#toBeRemoved");
+setTimeout(() => {
+  toBeRemoved.remove();
+}, 5000);
+```
+
+- Attribute Modification Script: Create a script that changes the attributes of an HTML element ✅
+
+```js
+const image = document.querySelector("#image");
+image.setAttribute("src", "path/to/new-image");
+```
+
+- Event Handling Script: Write a script that adds event listeners to HTML elements to change their content or style based on user interactions ✅
+
+```js
+const button = document.querySelector("#myButton");
+const newParagraphAgain = document.getElementById("myParagraph");
+button.addEventListener("click", function () {
+  newParagraphAgain.textContent = "The button was clicked!";
+});
+const elementAgain = document.getElementById("myElement");
+elementAgain.addEventListener("mouseover", function () {
+  elementAgain.style.borderColor = "red";
+});
+```
+
+### Achievement:
+
+By the end of these activities, students will:
+
+- Select and manipulate DOM elements using JavaScript.
+- Create and append new elements to the DOM.
+- Remove elements from the DOM.
+- Modify attributes and classes of HTML elements.
+- Add and handle events to make web pages interactive.

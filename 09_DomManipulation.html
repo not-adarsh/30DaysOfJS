@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation Examples</title>
+    <style>
+      .redParagraph {
+        background-color: red;
+      }
+
+      #myElement {
+        border: 2px solid black;
+        padding: 10px;
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="paragraph">This text will change</p>
+
+    <p class="redParagraph">This paragraph will turn red</p>
+
+    <ul>
+      <li>Existing item</li>
+    </ul>
+
+    <div id="toBeRemoved">This div will be removed after 5 seconds</div>
+
+    <img id="image" src="path/to/original-image" alt="Example Image" />
+
+    <div id="changeBackground">This div will change background</div>
+
+    <button id="myButton">Click me</button>
+    <p id="myParagraph">This text will change when the button is clicked</p>
+
+    <div id="myElement">Hover over me to change border color</div>
+
+    <script src="./09_DomManipulation.js"></script>
+  </body>
+</html>
